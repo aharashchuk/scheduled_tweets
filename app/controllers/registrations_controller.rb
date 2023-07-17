@@ -6,9 +6,9 @@ class RegistrationsController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to root_path, notice: "Successfully created account!"
-      return
+      redirect_to root_path, notice: "Successfully created account" 
     else
+      flash.now[:alert] = "Error creating account"
       render :new
     end    
   end
