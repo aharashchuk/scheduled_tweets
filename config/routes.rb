@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   
   get "/", to: "main#index", as: :root
 
+  get "password", to: "passwords#edit", as: :edit_password
+  patch "password", to: "passwords#update"
+
   get "sign_up", to: "registrations#new"
   post "sign_up", to: "registrations#create"
 
